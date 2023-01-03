@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WeatherInfo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtdiuQvLe6UMQvBBJhPXP0JrrnK2CAQY2ENw&usqp=CAU"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block align-text-top"
+          />
+          WeatherInfo
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+           
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              id="city"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit" id="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="my-4 text-center">
+        <h1>Weather for <span id="cityName"></span></h1>
+      </div>
+      <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-dark">
+              <div class="card-header py-3 text-bg-dark border-dark">
+                <h4 class="my-0 fw-normal">Temprature</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="temp2"></span>&#8451;
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Temprature is <span id="temp"></span></li>
+                  <li>Max Temprature is <span id="max_temp"></span></li>
+                  <li>Min Temprature is <span id="min_temp"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-dark">
+              <div class="card-header py-3 text-bg-dark border-dark">
+                <h4 class="my-0 fw-normal">Humidity Info</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="humidity2"></span>%
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Cloud PCT is <span id="cloud_pct"></span></li>
+                  <li>Feels like <span id="feels_like"></span></li>
+                  <li>Humidity is <span id="humidity"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-dark">
+              <div class="card-header py-3 text-bg-dark border-dark">
+                <h4 class="my-0 fw-normal">Sun and Air Info</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title">
+                  <span id="wind_speed"></span>Km/hr
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <!-- <li>Wind Speed is </li> -->
+                  <li>Wind Degrees like <span id="wind_degrees"></span></li>
+                  <li>Sunrise time is <span id="sunrise"></span></li>
+                  <li>Sunset time is <span id="sunset"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="display-6 text-center mb-4">
+          Weather of some other common places
+        </h2>
+
+        <div class="table-responsive">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Cloud</th>
+                <th>Temp</th>
+                <th>Feels Like</th>
+                <th>Humidity</th>
+                <th>Min Temp</th>
+                <th>Max Temp</th>
+                <th>Wind Speed</th>
+                <th>Wind Degrees</th>
+                <th>Sunrise</th>
+                <th>Sunset</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="text-start">Ludhiana</th>
+                <td><span id="ldhcp"></span></td>
+                <td><span id="ldhtp"></span></td>
+                <td><span id="ldhfl"></span></td>
+                <td><span id="ldhhum"></span></td>
+                <td><span id="ldhmintemp"></span></td>
+                <td><span id="ldhmaxtemp"></span></td>
+                <td><span id="ldhws"></span></td>
+                <td><span id="ldhwd"></span></td>
+                <td><span id="ldhsr"></span></td>
+                <td><span id="ldhss"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Bathinda</th>
+                <td><span id="bthtp"></span></td>
+                <td><span id="bthcp"></span></td>
+                <td><span id="bthfl"></span></td>
+                <td><span id="bthhum"></span></td>
+                <td><span id="bthmintemp"></span></td>
+                <td><span id="bthmaxtemp"></span></td>
+                <td><span id="bthws"></span></td>
+                <td><span id="bthwd"></span></td>
+                <td><span id="bthsr"></span></td>
+                <td><span id="bthss"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Jalandhar</th>
+                <td><span id="jaltp"></span></td>
+                <td><span id="jalcp"></span></td>
+                <td><span id="jalfl"></span></td>
+                <td><span id="jalhum"></span></td>
+                <td><span id="jalmintemp"></span></td>
+                <td><span id="jalmaxtemp"></span></td>
+                <td><span id="jalws"></span></td>
+                <td><span id="jalwd"></span></td>
+                <td><span id="jalsr"></span></td>
+                <td><span id="jalss"></span></td>
+              </tr>
+          
+              <tr>
+                <th scope="row" class="text-start">Patiala</th>
+                <td><span id="pattp"></span></td>
+                <td><span id="patcp"></span></td>
+                <td><span id="patfl"></span></td>
+                <td><span id="pathum"></span></td>
+                <td><span id="patmintemp"></span></td>
+                <td><span id="patmaxtemp"></span></td>
+                <td><span id="patws"></span></td>
+                <td><span id="patwd"></span></td>
+                <td><span id="patsr"></span></td>
+                <td><span id="patss"></span></td>
+              </tr>
+              <tr>
+                <th scope="row" class="text-start">Mohali</th>
+                <td><span id="mohalitp"></span></td>
+                <td><span id="mohalicp"></span></td>
+                <td><span id="mohalifl"></span></td>
+                <td><span id="mohalihum"></span></td>
+                <td><span id="mohalimintemp"></span></td>
+                <td><span id="mohalimaxtemp"></span></td>
+                <td><span id="mohaliws"></span></td>
+                <td><span id="mohaliwd"></span></td>
+                <td><span id="mohalisr"></span></td>
+                <td><span id="mohaliss"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
